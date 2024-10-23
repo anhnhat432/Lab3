@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DoctorManagementService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo analysis: &quot;Doctor Management: Source Packages&quot; (uses JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">DoctorManagementService.java</span></div><h1>DoctorManagementService.java</h1><pre class="source lang-java linenums">
+import java.util.List;
+
+public class DoctorManagementService {
+    private DoctorManagement doctorManagement;
+
+<span class="fc" id="L7">    public DoctorManagementService() {</span>
+<span class="fc" id="L8">        doctorManagement = new DoctorManagement();</span>
+<span class="fc" id="L9">    }</span>
+
+    public String addDoctor(int id, String name, String specialization) {
+<span class="fc" id="L12">        Doctor doctor = new Doctor(id, name, specialization);</span>
+<span class="fc" id="L13">        doctorManagement.addDoctor(doctor);</span>
+<span class="fc" id="L14">        return &quot;Doctor added successfully!&quot;;</span>
+    }
+
+    public String findDoctorById(int id) {
+<span class="fc" id="L18">        Doctor foundDoctor = doctorManagement.findDoctorById(id);</span>
+<span class="fc bfc" id="L19" title="All 2 branches covered.">        if (foundDoctor != null) {</span>
+<span class="fc" id="L20">            return &quot;Doctor Found: &quot; + foundDoctor.toString();</span>
+        } else {
+<span class="fc" id="L22">            return &quot;Doctor not found.&quot;;</span>
+        }
+    }
+
+    public String removeDoctorById(int id) {
+<span class="fc" id="L27">        boolean removed = doctorManagement.removeDoctorById(id);</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        if (removed) {</span>
+<span class="fc" id="L29">            return &quot;Doctor removed successfully.&quot;;</span>
+        } else {
+<span class="fc" id="L31">            return &quot;Doctor not found.&quot;;</span>
+        }
+    }
+
+    public List&lt;Doctor&gt; listDoctors() {
+<span class="fc" id="L36">        return doctorManagement.listDoctors();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
